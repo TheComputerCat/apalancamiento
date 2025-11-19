@@ -97,6 +97,7 @@ class CanvasDrawer {
     const rect = this.canvas.getBoundingClientRect();
     const W = rect.width;
     const H = rect.height;
+    const cellSize = 50;
 
     this.ctx.clearRect(0, 0, W, H);
     this.ctx.save();
@@ -104,15 +105,14 @@ class CanvasDrawer {
     this.ctx.strokeStyle = "#e7edf2";
     this.ctx.lineWidth = this.gridLW;
 
-    for (let i = 0; i <= 10; i++) {
-      const x = i * W / 10;
-      const y = i * H / 10;
-
+    for (let x = 0; x <= W; x += cellSize) {
       this.ctx.beginPath();
       this.ctx.moveTo(x, 0);
       this.ctx.lineTo(x, H);
       this.ctx.stroke();
+    }
 
+    for (let y = 0; y <= H; y += cellSize) {
       this.ctx.beginPath();
       this.ctx.moveTo(0, y);
       this.ctx.lineTo(W, y);
@@ -121,6 +121,7 @@ class CanvasDrawer {
 
     this.ctx.restore();
   }
+
 
   drawPoints() {
     this.ctx.save();

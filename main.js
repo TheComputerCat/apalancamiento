@@ -415,6 +415,7 @@ class AppController {
   }
 
   deletePoint(ev) {
+  this.dragging = false;
   const rect = this.canvas.getBoundingClientRect();
   const x = ev.clientX - rect.left;
   const y = ev.clientY - rect.top;

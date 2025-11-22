@@ -85,11 +85,11 @@ class CanvasDrawer {
 
   drawAll() {
     this.drawGrid();
-    this.drawPoints();
     this.drawMeanLines();
     this.drawLeastSquares();
     this.drawCustomUserLine();
     this.drawResiduals();
+    this.drawPoints();
     this.updateInfoBox();
   }
 
